@@ -1,3 +1,4 @@
+
 ;;General config
 (setq inhibit-splash-screen t)
 (recentf-mode 1)
@@ -27,5 +28,18 @@
 
 (req-package aggressive-indent
   :config (global-aggressive-indent-mode 1))
+
+(req-package which-key
+  :delight
+  :init
+  (which-key-mode)
+  :config
+  (which-key-setup-side-window-bottom)
+  (setq which-key-idle-delay 0.05))
+
+;; Add parts of each file's directory to the buffer name if not unique
+(req-package uniquify
+  :config
+  (setq uniquify-buffer-name-style 'forward))
 
 (provide 'init-look-and-feel)

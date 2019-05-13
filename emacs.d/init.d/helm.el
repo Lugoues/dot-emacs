@@ -1,5 +1,5 @@
-
 (req-package helm
+  :delight
   :require (helm-projectile helm-ag)
   :config (progn (helm-mode 1)
                  (helm-projectile-on)
@@ -10,11 +10,9 @@
                        helm-move-to-line-cycle-in-source t
                        helm-buffers-fuzzy-matching t
                        helm-M-x-fuzzy-match t
-                       helm-recentf-fuzzy-match t)
+                       helm-recentf-fuzzy-match t
+                       helm-ag-base-command "/usr/local/bin/rg --no-heading --smart-case")
 
-                 (custom-set-variables
-                  '(helm-ag-base-command "rg --no-heading"))
-                 
                  (global-set-key (kbd "C-x C-m") 'helm-M-x)
                  (global-set-key (kbd "M-y") 'helm-show-kill-ring)
                  (global-set-key (kbd "C-x b") 'helm-mini)
